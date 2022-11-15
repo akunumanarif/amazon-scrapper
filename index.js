@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 const api_key = "6651bdf3da4e6f978b7fd9361d270aea";
-const baseUrl = `https://api.scraper.com?api_key${api_key}&autoparse=true`;
+const baseUrl = `http://api.scraperapi.com?api_key=${api_key}&autoparse=true`;
 
 app.get("/", (req, res) => {
   res.send("Welcome to amazon scraper API");
@@ -18,7 +18,10 @@ app.get("/products/:productId", async (req, res) => {
     const response = await request(
       `${baseUrl}&url=https://www.amazon.com/dp/${productId}`
     );
+
+    res.status(200).json(JSON.parse(response));
   } catch (error) {
+    res.status(404).json(error);
     console.log(error);
   }
 });
