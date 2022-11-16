@@ -28,7 +28,7 @@
   </p>
   <br />
   <p>
-    <a href="https://hoppscotch.io/#gh-dark-mode-only" target="_blank">
+    <a href="#" target="_blank">
       <img
         src="./assets/bg.png"
         alt="amazon-scrapper"
