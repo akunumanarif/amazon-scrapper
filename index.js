@@ -4,9 +4,6 @@ import request from "request-promise";
 const app = express();
 app.use(express.json());
 
-// const api_key = "6651bdf3da4e6f978b7fd9361d270aea";
-// const baseUrl = `http://api.scraperapi.com?api_key=${api_key}&autoparse=true`;
-
 const generateUrl = (apiKey) =>
   `http://api.scraperapi.com?api_key=${apiKey}&autoparse=true`;
 
