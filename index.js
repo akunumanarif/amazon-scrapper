@@ -56,6 +56,21 @@ app.get("/products/:productId/offers", async (req, res) => {
   }
 });
 
+app.get("/search/:searchQuery", async (req, res) => {
+  const { searchQuery } = req.params;
+
+  try {
+    const response = await request(
+      `${baseUrl}&url=https://www.amazon.com/s?k=${searchQuery}`
+    );
+
+    res.status(200).json(JSON.parse(response));
+  } catch (error) {
+    res.status(404).json(error);
+    console.log(error);
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
