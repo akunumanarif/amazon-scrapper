@@ -41,6 +41,21 @@ app.get("/products/:productId/reviews", async (req, res) => {
   }
 });
 
+app.get("/products/:productId/offers", async (req, res) => {
+  const { productId } = req.params;
+
+  try {
+    const response = await request(
+      `${baseUrl}&url=https://www.amazon.com/gp/offer-listing/${productId}`
+    );
+
+    res.status(200).json(JSON.parse(response));
+  } catch (error) {
+    res.status(404).json(error);
+    console.log(error);
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
