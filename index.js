@@ -40,7 +40,9 @@ app.get("/products/:productId/reviews", async (req, res) => {
 
   try {
     const response = await request(
-      `${baseUrl}&url=https://www.amazon.com/product-reviews/${productId}`
+      `${generateUrl(
+        api_key
+      )}&url=https://www.amazon.com/product-reviews/${productId}`
     );
 
     res.status(200).json(JSON.parse(response));
@@ -58,7 +60,9 @@ app.get("/products/:productId/offers", async (req, res) => {
 
   try {
     const response = await request(
-      `${baseUrl}&url=https://www.amazon.com/gp/offer-listing/${productId}`
+      `${generateUrl(
+        api_key
+      )}&url=https://www.amazon.com/gp/offer-listing/${productId}`
     );
 
     res.status(200).json(JSON.parse(response));
@@ -76,7 +80,7 @@ app.get("/search/:searchQuery", async (req, res) => {
 
   try {
     const response = await request(
-      `${baseUrl}&url=https://www.amazon.com/s?k=${searchQuery}`
+      `${generateUrl(api_key)}&url=https://www.amazon.com/s?k=${searchQuery}`
     );
 
     res.status(200).json(JSON.parse(response));
