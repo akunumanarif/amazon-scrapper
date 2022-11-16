@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 
 app.get("/products/:productId/", async (req, res) => {
   const { productId } = req.params;
-  const { api_key } = req.params;
+  const { api_key } = req.query;
 
   try {
     const response = await request(
@@ -36,7 +36,7 @@ app.get("/products/:productId/", async (req, res) => {
 
 app.get("/products/:productId/reviews", async (req, res) => {
   const { productId } = req.params;
-  const { api_key } = req.params;
+  const { api_key } = req.query;
 
   try {
     const response = await request(
@@ -56,7 +56,7 @@ app.get("/products/:productId/reviews", async (req, res) => {
 
 app.get("/products/:productId/offers", async (req, res) => {
   const { productId } = req.params;
-  const { api_key } = req.params;
+  const { api_key } = req.query;
 
   try {
     const response = await request(
@@ -76,7 +76,7 @@ app.get("/products/:productId/offers", async (req, res) => {
 
 app.get("/search/:searchQuery", async (req, res) => {
   const { searchQuery } = req.params;
-  const { api_key } = req.params;
+  const { api_key } = req.query;
 
   try {
     const response = await request(
