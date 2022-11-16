@@ -1,14 +1,6 @@
-# amazon-scrapper
-
-Amazon web scrapper
-
 <div align="center">
   <a href="https://amazonscraper.cyclic.app/">
-    <img
-      src="https://avatars.githubusercontent.com/u/56705483"
-      alt="Hoppscotch Logo"
-      height="64"
-    />
+   
   </a>
   <br />
   <p>
@@ -36,13 +28,6 @@ Amazon web scrapper
   </p>
   <br />
   <p>
-    <!-- <a href="https://hoppscotch.io/#gh-light-mode-only" target="_blank">
-      <img
-        src="./packages/hoppscotch-app/public/images/banner-light.png"
-        alt="Hoppscotch"
-        width="100%"
-      />
-    </a> -->
     <a href="https://hoppscotch.io/#gh-dark-mode-only" target="_blank">
       <img
         src="./assets/bg.png"
@@ -102,9 +87,6 @@ M Nu'man Arif H —
 
 <div align="center">
   <a href="https://github.com/akunumanarif">
-    <img src="https://github.com/account"
-      alt="Contributors"
-      width="100%" />
   </a>
 </div>
 
