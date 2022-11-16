@@ -4,8 +4,11 @@ import request from "request-promise";
 const app = express();
 app.use(express.json());
 
-const api_key = "6651bdf3da4e6f978b7fd9361d270aea";
-const baseUrl = `http://api.scraperapi.com?api_key=${api_key}&autoparse=true`;
+// const api_key = "6651bdf3da4e6f978b7fd9361d270aea";
+// const baseUrl = `http://api.scraperapi.com?api_key=${api_key}&autoparse=true`;
+
+const generateUrl = (apiKey) =>
+  `http://api.scraperapi.com?api_key=${apiKey}&autoparse=true`;
 
 app.get("/", (req, res) => {
   res.send("Welcome to amazon scraper API");
@@ -13,12 +16,13 @@ app.get("/", (req, res) => {
 
 //! GET PRODUCT
 
-app.get("/products/:productId", async (req, res) => {
+app.get("/products/:productId/", async (req, res) => {
   const { productId } = req.params;
+  const { api_key } = req.params;
 
   try {
     const response = await request(
-      `${baseUrl}&url=https://www.amazon.com/dp/${productId}`
+      `${generateUrl(api_key)}&url=https://www.amazon.com/dp/${productId}`
     );
 
     res.status(200).json(JSON.parse(response));
